@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LúdikaIA | Aprender a tu manera</title>
+<meta name="description" content="Apoyo escolar personalizado con inteligencia artificial, supervisión docente y cuidado de los datos.">
+<style>
+:root{--navy:#17324d;--teal:#087e8b;--mint:#dff2ee;--cream:#fbfaf6;--ink:#263746;--muted:#657581;--line:#e4e9e9;--coral:#f28b72}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{max-width:1160px;margin:auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:850;letter-spacing:-1px;color:var(--navy);font-size:1.45rem}.brand span{color:var(--teal)}
+nav{display:flex;gap:26px;font-size:.9rem;color:#52636e}nav a:hover{color:var(--teal)}.nav-cta,.btn{background:var(--teal);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;display:inline-block;border:0;cursor:pointer}.nav-cta{font-size:.88rem}
+.hero{background:radial-gradient(circle at 85% 15%,#dff2ee 0,transparent 30%),linear-gradient(120deg,#fbfaf6,#f4f8f6);padding:88px 0 76px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}.eyebrow{color:var(--teal);font-size:.78rem;text-transform:uppercase;letter-spacing:1.7px;font-weight:800}
+h1{font-size:clamp(2.6rem,5vw,4.5rem);line-height:1.04;letter-spacing:-2.5px;color:var(--navy);margin:16px 0 22px}h2{font-size:clamp(2rem,3vw,2.8rem);line-height:1.1;letter-spacing:-1.2px;color:var(--navy);margin:10px 0 16px}h3{color:var(--navy);margin:0 0 8px}.lead{font-size:1.15rem;color:#536570;max-width:590px}.actions{display:flex;gap:12px;align-items:center;margin-top:28px;flex-wrap:wrap}.btn.secondary{background:#fff;color:var(--navy);border:1px solid #d7e2e0}.micro{font-size:.82rem;color:var(--muted);margin-top:18px}
+.mock{background:#fff;border:1px solid #e3ebea;border-radius:24px;padding:20px;box-shadow:0 22px 65px rgba(23,50,77,.12);transform:rotate(1deg)}.mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.pill{background:var(--mint);color:var(--teal);border-radius:99px;padding:5px 10px;font-size:.72rem;font-weight:800}.student{display:flex;align-items:center;gap:12px}.avatar{width:42px;height:42px;border-radius:50%;background:#ffe0d4;display:grid;place-items:center;font-size:1.2rem}.muted{color:var(--muted);font-size:.85rem}.progress{height:7px;background:#edf1f0;border-radius:20px;overflow:hidden;margin:10px 0}.progress i{display:block;width:68%;height:100%;background:var(--teal);border-radius:20px}.lesson{border:1px solid var(--line);padding:15px;border-radius:16px;margin-top:12px}.lesson strong{display:block;color:var(--navy)}.lesson small{color:var(--muted)}.lesson.feature{background:#f3faf8;border-color:#d5ebe5}.tag{display:inline-block;background:#fff0e9;color:#a95038;padding:4px 8px;border-radius:7px;font-size:.7rem;font-weight:800;margin-bottom:8px}
+section{padding:82px 0}.section-intro{max-width:680px;margin-bottom:36px}.section-intro p{color:var(--muted);font-size:1.05rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:20px;padding:24px;background:#fff}.icon{width:44px;height:44px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:1.25rem;margin-bottom:18px}.card p{color:var(--muted);margin-bottom:0}.soft{background:var(--cream)}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.step{border-top:3px solid var(--teal);padding:18px 14px;background:#fff;border-radius:0 0 14px 14px}.step b{color:var(--teal);font-size:.8rem}.step p{font-size:.9rem;color:var(--muted)}
+.personal-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}.example{background:#f6f9f8;border-radius:22px;padding:24px}.example-row{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #e1e9e6}.example-row:last-child{border:0}.emoji{font-size:1.8rem}.example-row small{display:block;color:var(--muted)}
+.trust{background:var(--navy);color:#fff}.trust h2,.trust h3{color:#fff}.trust p{color:#d4e0e7}.trust .card{background:#24435d;border-color:#3c5b72}.trust .card p{color:#d4e0e7}.trust .icon{background:#31566a}
+.cta{background:linear-gradient(120deg,#e6f4f0,#f9f7f0);text-align:center;padding:74px 0}.cta p{max-width:640px;margin:0 auto 24px;color:var(--muted)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{display:none;position:fixed;inset:0;background:rgba(15,35,50,.55);z-index:20;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal-box{background:#fff;border-radius:22px;padding:28px;max-width:480px;width:100%;position:relative}.close{position:absolute;right:18px;top:14px;border:0;background:none;font-size:1.5rem;cursor:pointer}.field{display:block;margin:14px 0}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d7e1df;border-radius:10px;font:inherit}.field label{font-weight:700;font-size:.85rem;display:block;margin-bottom:6px}.success{display:none;color:var(--teal);font-weight:700;margin-top:12px}
+@media(max-width:850px){nav{display:none}.hero-grid,.personal-grid{grid-template-columns:1fr}.hero{padding:60px 0}.cards{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.mock{transform:none}}
+@media(max-width:560px){.cards,.steps{grid-template-columns:1fr}section{padding:60px 0}.nav{height:66px}.nav-cta{padding:10px 13px;font-size:.8rem}.hero-grid{gap:35px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#">Lúdika<span>IA</span></a>
+  <nav><a href="#como-funciona">Cómo funciona</a><a href="#personalizacion">Personalización</a><a href="#escuelas">Para escuelas</a><a href="#confianza">IA responsable</a></nav>
+  <button class="nav-cta" onclick="openModal()">Solicitar una demo</button>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div><div class="eyebrow">Aprendizaje que acompaña</div>
+    <h1>Aprender a tu manera. <span style="color:var(--teal)">Llegar más lejos.</span></h1>
+    <p class="lead">Apoyo escolar personalizado con inteligencia artificial para que cada estudiante refuerce lo que necesita, a su ritmo y con ejemplos que le interesan.</p>
+    <div class="actions"><button class="btn" onclick="openModal()">Conocé LúdikaIA</button><a class="btn secondary" href="#como-funciona">Descubrir cómo funciona</a></div>
+    <p class="micro">Una herramienta para potenciar el trabajo docente, no para reemplazarlo.</p>
+  </div>
+  <div class="mock" aria-label="Vista ilustrativa del panel de estudiante">
+    <div class="mock-top"><div class="student"><div class="avatar">⚽</div><div><strong>¡Hola, Martina!</strong><div class="muted">Tu espacio de aprendizaje</div></div></div><span class="pill">Tu ruta de hoy</span></div>
+    <div class="lesson feature"><span class="tag">RECOMENDADO PARA VOS</span><strong>Fracciones en la cancha</strong><small>Repasá equivalencias con situaciones de fútbol · 8 min</small><div class="progress"><i></i></div><small>Tu progreso en matemática: 68%</small></div>
+    <div class="lesson"><strong>Un desafío más para practicar</strong><small>Proporciones y porcentajes · 5 preguntas</small></div>
+    <div class="lesson"><strong>¡Vas avanzando!</strong><small>Ya reforzaste 3 de tus 4 temas pendientes.</small></div>
+  </div>
+</div></section>
+
+<section id="problema"><div class="wrap">
+  <div class="section-intro"><div class="eyebrow">El desafío</div><h2>No todos aprenden igual. El acompañamiento tampoco debería ser igual.</h2>
+  <p>En el aula, cada estudiante tiene distintos conocimientos previos, intereses y ritmos. LúdikaIA ayuda a identificar qué necesita reforzar cada uno y acerca recursos útiles al momento indicado.</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon">🎯</div><h3>Refuerzo enfocado</h3><p>Menos ejercicios repetidos sin sentido. Más práctica sobre los conceptos que todavía cuestan.</p></article>
+    <article class="card"><div class="icon">⏳</div><h3>Tiempo para enseñar</h3><p>El docente cuenta con propuestas de actividades y recursos editables para dedicar más tiempo al acompañamiento.</p></article>
+    <article class="card"><div class="icon">🌱</div><h3>Intervenir a tiempo</h3><p>Las señales de menor participación pueden ayudar a orientar una conversación antes de que la dificultad se profundice.</p></article>
+  </div>
+</div></section>
+
+<section class="soft" id="como-funciona"><div class="wrap">
+  <div class="section-intro"><div class="eyebrow">Una experiencia simple</div><h2>De la dificultad a un próximo paso concreto.</h2><p>La plataforma combina información pedagógica y herramientas de IA en un proceso que mantiene al docente en control.</p></div>
+  <div class="steps">
+    <div class="step"><b>01 · CONOCER</b><h3>Entender el punto de partida</h3><p>Se consideran los temas trabajados, ejercicios y objetivos curriculares.</p></div>
+    <div class="step"><b>02 · PRIORIZAR</b><h3>Elegir qué sigue</h3><p>Se destaca el contenido que puede aportar más valor en ese momento.</p></div>
+    <div class="step"><b>03 · ADAPTAR</b><h3>Explicar de otra forma</h3><p>El concepto se mantiene; los ejemplos se acercan a los intereses del alumno.</p></div>
+    <div class="step"><b>04 · PRACTICAR</b><h3>Aprender haciendo</h3><p>Actividades breves con pistas, niveles y nuevas oportunidades.</p></div>
+    <div class="step"><b>05 · ACOMPAÑAR</b><h3>Dar seguimiento</h3><p>El equipo docente revisa avances y señales que merecen atención.</p></div>
+  </div>
+</div></section>
+
+<section id="personalizacion"><div class="wrap personal-grid">
+  <div><div class="eyebrow">El mismo contenido, otra manera de aprender</div><h2>La explicación cambia. El objetivo de aprendizaje, no.</h2>
+    <p class="lead">Inspirada en la personalización de Netflix, LúdikaIA adapta la forma de presentar un concepto según los intereses del estudiante. Así, una materia difícil puede conectarse con algo que ya conoce y disfruta.</p>
+    <p style="color:var(--muted)">Los intereses son preferencias de aprendizaje, no etiquetas: el estudiante puede modificarlos cuando quiera.</p>
+  </div>
+  <div class="example">
+    <h3>Un tema: fracciones</h3>
+    <div class="example-row"><div class="emoji">⚽</div><div><strong>Para Martina, que disfruta el fútbol</strong><small>Porcentajes de posesión, resultados y tablas de posiciones.</small></div></div>
+    <div class="example-row"><div class="emoji">🎵</div><div><strong>Para Miguel, que disfruta la música</strong><small>Compases, tiempos y partes de una canción.</small></div></div>
+    <div class="example-row"><div class="emoji">🎨</div><div><strong>Para otro perfil</strong><small>Colores, proporciones y composición visual.</small></div></div>
+  </div>
+</div></section>
+
+<section class="trust" id="confianza"><div class="wrap">
+  <div class="section-intro"><div class="eyebrow" style="color:#8ee0d0">Confianza desde el diseño</div><h2>La tecnología acompaña. Las personas deciden.</h2><p>Trabajar con comunidades educativas requiere transparencia, privacidad y supervisión. La seguridad no es un agregado: forma parte del producto.</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon">🔒</div><h3>Datos protegidos</h3><p>Minimización de datos, permisos por rol y controles para evitar compartir información identificable con servicios externos.</p></article>
+    <article class="card"><div class="icon">👩‍🏫</div><h3>Docente en control</h3><p>Los materiales generados se revisan y editan antes de llegar al estudiante. Las alertas requieren interpretación humana.</p></article>
+    <article class="card"><div class="icon">🧭</div><h3>IA transparente</h3><p>Recomendaciones explicables, fuentes educativas autorizadas y límites claros sobre el uso de la automatización.</p></article>
+  </div>
+  <p class="micro" style="color:#d4e0e7">La implementación deberá adecuarse a la normativa aplicable de protección de datos personales y a las políticas de cada institución.</p>
+</div></section>
+
+<section id="escuelas"><div class="wrap">
+  <div class="section-intro"><div class="eyebrow">Para la comunidad educativa</div><h2>Una mirada para cada rol.</h2><p>Una misma plataforma, con herramientas específicas para acompañar el aprendizaje y tomar mejores decisiones pedagógicas.</p></div>
+  <div class="cards">
+    <article class="card"><div class="icon">📚</div><h3>Estudiantes</h3><p>Una ruta clara, actividades breves y explicaciones que conectan con sus intereses.</p></article>
+    <article class="card"><div class="icon">✏️</div><h3>Docentes y tutores</h3><p>Actividades sugeridas, evolución por tema y señales para organizar el acompañamiento.</p></article>
+    <article class="card"><div class="icon">🏫</div><h3>Instituciones</h3><p>Indicadores agregados por curso y materia, configuración de permisos y seguimiento de adopción.</p></article>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap"><div class="eyebrow">Construyamos nuevas formas de aprender</div><h2>¿Querés conocer cómo podría funcionar en tu escuela?</h2><p>Coordinemos una conversación para explorar un piloto, conocer las necesidades de tu institución y definir objetivos de aprendizaje medibles.</p><button class="btn" onclick="openModal()">Solicitar una demo</button></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong style="color:var(--navy)">LúdikaIA</strong> · Aprender a tu manera.</div><div>Propuesta conceptual de producto · 2026</div></div></footer>
+
+<div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box"><button class="close" onclick="closeModal()" aria-label="Cerrar">×</button>
+    <div class="eyebrow">Hablemos</div><h2 id="modalTitle" style="font-size:1.8rem">Solicitá una demo</h2>
+    <p class="muted">Completá tus datos y nuestro equipo se pondrá en contacto. (Formulario demostrativo: no envía información a un servidor.)</p>
+    <form id="demoForm">
+      <div class="field"><label for="name">Nombre</label><input id="name" required placeholder="Tu nombre"></div>
+      <div class="field"><label for="email">Email institucional</label><input id="email" type="email" required placeholder="nombre@institucion.edu"></div>
+      <div class="field"><label for="role">¿Desde qué rol nos contactás?</label><select id="role"><option>Equipo directivo</option><option>Docente</option><option>Coordinación pedagógica</option><option>Otro</option></select></div>
+      <button class="btn" type="submit">Enviar interés</button><div class="success" id="successMsg">¡Gracias! Esta demo registró la interacción localmente.</div>
+    </form>
+  </div>
+</div>
+<script>
+const modal=document.getElementById('demoModal');
+function openModal(){modal.classList.add('open')}
+function closeModal(){modal.classList.remove('open')}
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById('demoForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('successMsg').style.display='block';});
+</script>
+</body></html>
